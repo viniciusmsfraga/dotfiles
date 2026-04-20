@@ -1,0 +1,9 @@
+theme = Retro Legends
+background-opacity = 0.8
+
+keybind = ctrl+left=goto_split:left
+keybind = ctrl+down=goto_split:down
+keybind = ctrl+up=goto_split:up
+keybind = ctrl+right=goto_split:right
+
+
