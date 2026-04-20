@@ -24,36 +24,22 @@ return {
     require('mason-lspconfig').setup({
       -- Install these LSPs automatically
       ensure_installed = {
-        -- 'bashls', -- requires npm to be installed
-        -- 'cssls', -- requires npm to be installed
-        -- 'html', -- requires npm to be installed
         'lua_ls',
-        -- 'jsonls', -- requires npm to be installed
         'lemminx',
         'marksman',
         'quick_lint_js',
-        -- 'tsserver', -- requires npm to be installed
-        -- 'yamlls', -- requires npm to be installed
-      }
+      },
+      automatic_enable = true,
     })
 
     local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local lsp_attach = function(client, bufnr)
-      -- Create your keybindings here...
-    end
 
-    -- Call setup on each LSP server
-    require('mason-lspconfig').setup_handlers({
-      function(server_name)
-        vim.lsp.config('<server>', {
-          on_attach = lsp_attach,
-          capabilities = lsp_capabilities,
-        })
-      end
+    vim.lsp.config('*', {
+      capabilities = lsp_capabilities,
     })
 
     -- Lua LSP settings
-    vim.lsp.config('<lua_ls>', {
+    vim.lsp.config('lua_ls', {
       settings = {
         Lua = {
           diagnostics = {

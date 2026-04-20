@@ -7,7 +7,7 @@ return {
   priority = 1000, -- Load the colorscheme before other non-lazy-loaded plugins
   opts = {
     -- Replace this with your scheme-specific settings or remove to use the defaults
-    -- transparent = true,
+    transparent = true,
     background = {
       -- light = "lotus",
       dark = "wave", -- "wave, dragon"
